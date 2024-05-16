@@ -1,0 +1,121 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor "Patient" as Pat
+actor "Registered Patient" as RPat
+actor "Unregistered Patient" as UPat
+actor "Ambulance Crew" as AC
+actor "Accountant" as Acc
+actor "Surgeon" as Sur
+actor "Consultant" as Con
+actor "Nursing Supervisor" as NS
+actor "Medical Officer" as MO
+actor "Resident Medical Officer (R M O)" as RMO
+actor "Midwive" as Mw
+actor "Nurse" as Nur
+actor "Store Keeper" as SK
+actor "Pharmacist" as Pha
+actor "Distributor of Diabetes, pressure medications and Vaccines" as DD
+actor "Statistician" as Stat
+actor "U H & F P O" as UH
+actor "H D L(head clark)" as HDL
+actor "Ticket Attendant" as TA
+actor "Pathologist & Lab Assistant" as Path
+actor "Health Inspector" as HI
+actor "Anesthesiologist" as Anes
+
+package "Upazilla Health Complex Management" {
+	(Login and Registration)
+	(Patient Care Coordination System)
+	(Physician Centric Healthcare Management System)
+	(Healthcare Personnnel Support System)
+	(Administration Service)
+}
+
+
+RPat --> Pat
+UPat --> Pat
+
+
+RPat -- (Login and Registration)
+Acc -- (Login and Registration)
+Sur -- (Login and Registration)
+Con -- (Login and Registration)
+NS -- (Login and Registration)
+MO -- (Login and Registration)
+RMO -- (Login and Registration)
+Mw -- (Login and Registration)
+Nur -- (Login and Registration)
+SK -- (Login and Registration)
+Pha -- (Login and Registration)
+DD -- (Login and Registration)
+Stat -- (Login and Registration)
+UH -- (Login and Registration)
+HDL -- (Login and Registration)
+(Login and Registration) -- TA
+(Login and Registration) -- Path
+(Login and Registration) -- HI
+(Login and Registration) -- Anes
+
+
+Con -- (Patient Care Coordination System)
+RPat -- (Patient Care Coordination System)
+Pat -- (Patient Care Coordination System)
+AC -- (Patient Care Coordination System)
+DD -- (Patient Care Coordination System)
+rectangle "Google Map" {
+	(Patient Care Coordination System) -- "Google Map"
+}
+
+
+Sur -- (Physician Centric Healthcare Management System)
+Pat -- (Physician Centric Healthcare Management System)
+MO -- (Physician Centric Healthcare Management System)
+NS -- (Physician Centric Healthcare Management System)
+RMO -- (Physician Centric Healthcare Management System)
+UH -- (Physician Centric Healthcare Management System)
+(Physician Centric Healthcare Management System) -- Anes
+(Physician Centric Healthcare Management System) -- Nur
+(Physician Centric Healthcare Management System) -- Path
+rectangle "Sadar Hospital API" {
+	(Physician Centric Healthcare Management System) -- "Sadar Hospital API"
+}
+rectangle "D I M S  A P I" {
+	(Physician Centric Healthcare Management System) -- "D I M S  A P I"
+}
+rectangle "Store" {
+	(Physician Centric Healthcare Management System) -- "Store"
+}
+rectangle "Thana API" {
+	(Physician Centric Healthcare Management System) -- "Thana API"
+}
+rectangle "Pharmacy" {
+	(Physician Centric Healthcare Management System) -- "Pharmacy"
+}
+
+
+Pat -- (Healthcare Personnnel Support System)
+Mw -- (Healthcare Personnnel Support System)
+SK -- (Healthcare Personnnel Support System)
+RMO -- (Healthcare Personnnel Support System)
+UH -- (Healthcare Personnnel Support System)
+rectangle "District Reserve Store" {
+	(Healthcare Personnnel Support System) -- "District Reserve Store"
+}
+
+
+RMO -- (Administration Service)
+Stat -- (Administration Service)
+UH -- (Administration Service)
+Acc -- (Administration Service)
+HDL -- (Administration Service)
+(Administration Service) -- TA
+rectangle "I E D C R" {
+	(Administration Service) -- "I E D C R"
+}
+rectangle "Statistics API" {
+	(Administration Service) -- "Statistics API"
+}
+
+@enduml

@@ -1,0 +1,82 @@
+@startuml
+
+left to right direction
+skinparam {
+    BackgroundColor White
+    usecase {
+        BackgroundColor #D5E8D4
+        BorderColor #82B366
+    }
+    rectangle {
+        BackgroundColor #F5F5F5
+        BorderColor DarkSlateGray
+    }
+}
+
+actor "Patient" as p
+actor "Surgeon" as s
+actor "Nurse" as n
+actor "Anesthesiologist" as ans
+actor "Nursing Supervisor" as ns
+actor "Medical Officer" as mo
+actor "R M O" as R
+actor "U H & F P O" as U
+actor "Pathologist" as pt
+
+rectangle "Physician-centric Healthcare Management System"{
+    (Roster Management)
+    (Indoor Management)
+    (Real Time Communication)
+    (Medicine Inventory Integration)
+    (Reporting Suspicious Case)
+    (Surgeon Service)
+    (Patient Information Management)
+    (Electronic Prescription)
+    (Referral System)
+    (Streamlined access to Drug Information)
+}
+U -- (Roster Management)
+R -- (Roster Management)
+ns -- (Roster Management)
+mo -- (Roster Management)
+(Roster Management) -- n
+mo -- (Indoor Management)
+p -- (Indoor Management)
+ns -- (Indoor Management)
+ns -- (Medicine Inventory Integration)
+(Indoor Management) -- n
+mo -- (Real Time Communication)
+ns -- (Real Time Communication)
+(Real Time Communication) -- pt
+mo -- (Medicine Inventory Integration)
+U -- (Medicine Inventory Integration)
+R -- (Medicine Inventory Integration)
+mo -- (Reporting Suspicious Case)
+s -- (Surgeon Service)
+(Surgeon Service) -- n
+(Surgeon Service) -- ans
+mo -- (Patient Information Management)
+p -- (Patient Information Management)
+mo -- (Electronic Prescription)
+p -- (Electronic Prescription)
+mo -- (Referral System)
+p -- (Referral System)
+mo -- (Streamlined access to Drug Information)
+rectangle "Thana API" #FFE6CC{
+    (Reporting Suspicious Case) -- (Thana API)
+}
+rectangle "DIMS API" #FFE6CC {
+    (Streamlined access to Drug Information) -- (DIMS API)
+}
+rectangle "Sadar Hospital API" #FFE6CC{
+    (Surgeon Service) -- "Sadar Hospital API"
+}
+rectangle "Store" #FFE6CC{
+    (Surgeon Service) -- "Store"
+    (Medicine Inventory Integration) -- "Store"
+}
+rectangle "Pharmacy" #FFE6CC{
+    (Medicine Inventory Integration) -- "Pharmacy"    
+}
+
+@enduml

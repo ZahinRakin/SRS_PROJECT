@@ -1,0 +1,43 @@
+@startuml
+
+left to right direction
+
+actor "Unregistered Patient" as Guest
+actor "Registered Patient" as Patient
+actor "Ambulance Crew" as Crew
+actor "Doctor" as Doctor
+actor "Authorized Distributor" as Distributor
+
+rectangle "Patient Care Coordination System" {
+    usecase "Consultancy Time Viewer" as ConsultancyTimeViewer
+    usecase "View Hospital Services" as HospitalServices
+    usecase "Ambulance Call" as AmbulanceCall
+    usecase "Live Ambulance Tracking" as LiveAmbulanceTracking
+    usecase "Efficient Patient Care and Medication Management" as MedicationManagement
+    usecase "Renew Vaccinations and Prescription" as RenewPrescription
+    usecase "Medicine Reminder" as MedicineReminder
+    usecase "Medical Test Report & Prescription Viewer" as ReportViewer
+    usecase "E-Ticket Service" as ETicketService
+
+    Guest -- ConsultancyTimeViewer
+    Guest -- HospitalServices
+    Guest -- AmbulanceCall
+    Guest -- LiveAmbulanceTracking
+
+    Patient -- MedicationManagement
+    Patient -- RenewPrescription
+    Patient -- MedicineReminder
+    Patient -- ReportViewer
+    Patient -- ETicketService
+
+    AmbulanceCall -- Crew
+    LiveAmbulanceTracking -- Crew
+
+    Doctor -- MedicationManagement
+    Doctor -- RenewPrescription
+    Doctor -- ReportViewer
+
+    Distributor -- MedicationManagement
+}
+
+@enduml

@@ -1,0 +1,40 @@
+@startuml
+
+left to right direction
+
+skinparam {
+	usecase{
+		BackgroundColor #D5E8D4
+		BorderColor #82B366
+	}
+	rectangle{
+		BackgroundColor #F5F5F5
+		BorderColor DarkSlateGray
+	}
+}
+
+actor "Patient" as pat
+actor "Midwife" as midwife
+actor "Store keeper" as storekeeper
+actor "R M O" as R
+actor "U H & F P O" as U
+
+rectangle "Healthcare Personnel Support System" {
+  (Inventory Management)
+  (Managing Healthcare Log & Vaccine Distribution)
+  (Tracking Newborn Deliveries & Maternal Care)
+  (Automated Restock Request)
+}
+pat -- (Managing Healthcare Log & Vaccine Distribution)
+storekeeper -- (Inventory Management)
+R -- (Inventory Management)
+U -- (Inventory Management)
+midwife -- (Tracking Newborn Deliveries & Maternal Care)
+storekeeper -- (Automated Restock Request)
+
+rectangle "District Reserve Store (DRS)" #FFE6CC{
+  (Automated Restock Request) -- "District Reserve Store (DRS)"
+  (Inventory Management) -- "District Reserve Store (DRS)"
+}
+
+@enduml

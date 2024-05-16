@@ -1,0 +1,59 @@
+@startuml
+
+left to right direction
+skinparam {
+    BackgroundColor White
+    usecase {
+        BackgroundColor #D5E8D4
+        BorderColor #82B366
+    }
+    rectangle {
+        BackgroundColor #F5F5F5
+        BorderColor DarkSlateGray
+    }
+}
+
+actor "U H & F P O" as U
+actor "R M O" as R
+actor "Statistician" as st
+actor "Head Clerk" as hc
+actor "Ticket Attendant" as ta
+actor "Accountant" as ac
+
+rectangle "Aministration Service" {
+	(Checking availability of staff and resources)
+	(Employee Data Management)
+	(Ticket Sales Database Management)
+	(Accounting Management)
+	(Enhanced Statistical Analysis of all sectors)
+	(U H & F P O ’s Dashboard)
+}
+
+U -- (Checking availability of staff and resources)
+R -- (Checking availability of staff and resources)
+st -- (Checking availability of staff and resources)
+hc -- (Employee Data Management)
+(Ticket Sales Database Management) -- ta
+st -- (Ticket Sales Database Management)
+ac -- (Accounting Management)
+U -- (Accounting Management)
+st -- (Enhanced Statistical Analysis of all sectors)
+U -- (U H & F P O ’s Dashboard)
+
+rectangle "Statistics API" #FFE6CC{
+	(Enhanced Statistical Analysis of all sectors) -- "Statistics API"
+}
+
+rectangle "I E D C R" #FFE6CC{
+	(U H & F P O ’s Dashboard) -- "I E D C R"
+}
+
+rectangle "Online Payment System" #FFE6CC{
+	(Ticket Sales Database Management) -- "Online Payment System"
+	(Accounting Management) -- "Online Payment System"
+}
+
+
+
+
+@enduml

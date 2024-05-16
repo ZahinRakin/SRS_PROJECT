@@ -1,0 +1,40 @@
+@startuml
+
+left to right direction
+skinparam {
+    BackgroundColor White
+    usecase {
+        BackgroundColor LightBlue
+        BorderColor DarkSlateGray
+    }
+    rectangle {
+        BackgroundColor LightGray
+        BorderColor DarkSlateGray
+    }
+}
+
+actor "Head Clerk" as HC
+actor "Employee" as Emp
+actor "Patient" as Pat
+
+rectangle "Login & Registration System" {
+    usecase "Registration of Head Clerk" as RegHC
+    usecase "Registration of Employees" as RegEmp
+    usecase "Registration of Patient" as RegPat
+    usecase "Authentication" as Auth
+    usecase "Password Recovery" as PassRec
+    usecase "Change Password" as ChangePass
+}
+
+HC -- RegHC
+HC -- RegEmp
+Emp -- RegEmp
+Emp -- Auth
+Emp -- PassRec
+Emp -- ChangePass
+Pat -- RegPat
+Pat -- Auth
+Pat -- PassRec
+Pat -- ChangePass
+
+@enduml

@@ -1,0 +1,88 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor “Patient” as pat
+actor "Medical Officer" as MO
+actor "Resident Medical Officer (R M O)" as RM
+actor "Consultant" as con
+actor "Surgeon" as sur
+actor "Nursing Supervisor" as NS
+actor "Midwive" as wife
+actor "Nurse" as n
+actor "Ambulance Driver" as AD
+actor "Store Keeper" as SK
+actor "Pharmacist" as p
+actor "Distributor of Diabetes, pressure medications and Vaccines" as dd
+actor "Statistician" as st
+actor "Accountant" as ac
+actor "U H & F P O" as U
+actor "H D L(head clark)" as hdl
+actor "Ticket Attendant" as TA
+actor "Pathologist" as path
+actor "Health Inspector" as HI
+actor "Anesthesiologist" as ans
+
+
+package {
+	(Upazila Health Complex Management System)
+}
+
+pat -- (Upazila Health Complex Management System)
+MO -- (Upazila Health Complex Management System)
+RM -- (Upazila Health Complex Management System)
+con -- (Upazila Health Complex Management System)
+sur -- (Upazila Health Complex Management System)
+NS -- (Upazila Health Complex Management System)
+wife -- (Upazila Health Complex Management System)
+n -- (Upazila Health Complex Management System)
+AD -- (Upazila Health Complex Management System)
+SK -- (Upazila Health Complex Management System)
+p -- (Upazila Health Complex Management System)
+dd -- (Upazila Health Complex Management System)
+st -- (Upazila Health Complex Management System)
+ac -- (Upazila Health Complex Management System)
+U -- (Upazila Health Complex Management System)
+hdl -- (Upazila Health Complex Management System)
+(Upazila Health Complex Management System) -- TA
+(Upazila Health Complex Management System) -- path
+(Upazila Health Complex Management System) -- HI
+(Upazila Health Complex Management System) -- ans
+
+rectangle "Accountant API" {
+(Upazila Health Complex Management System) -- "Accountant API"
+}
+rectangle "Midwives API" {
+(Upazila Health Complex Management System) -- "Midwives API"
+}
+rectangle "Thana API" {
+(Upazila Health Complex Management System) -- "Thana API"
+}
+rectangle "District reserve store" {
+(Upazila Health Complex Management System) -- "District reserve store"
+}
+rectangle "Google map" {
+(Upazila Health Complex Management System) -- "Google map"
+}
+rectangle "Statistics API" {
+(Upazila Health Complex Management System) -- "Statistics API"
+}
+rectangle "DIMS API" {
+(Upazila Health Complex Management System) -- "DIMS API"
+}
+rectangle "I E D C R API" {
+(Upazila Health Complex Management System) -- "I E D C R API"
+}
+rectangle "Sadar Hospital API" {
+(Upazila Health Complex Management System) -- "Sadar Hospital API"
+}
+rectangle "Store" {
+(Upazila Health Complex Management System) -- "Store"
+}
+rectangle "Pharmacy" {
+(Upazila Health Complex Management System) -- "Pharmacy"
+}
+
+
+
+@enduml
